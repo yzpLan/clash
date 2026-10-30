@@ -1,6 +1,23 @@
 // Clash Verge Rev / Mihomo extension script
 // ACL4SSR_Smart_Lite.ini -> script; preserve original SNTP dns and nodes.
 function main(config) {
+
+// 添加自己的 ZGO VPS Hysteria2 节点
+  // config.proxies = config.proxies || [];
+
+  // if (!config.proxies.some(p => p.name === '🇺🇸 美国-ZGO-HY2')) {
+  //   config.proxies.push({
+  //     name: '🇺🇸 美国-ZGO-HY2',
+  //     type: 'hysteria2',
+  //     server: 'xui.582063.xyz',
+  //     port: 13990,
+  //     password: '',
+  //     sni: 'hy2.582063.xyz',
+  //     'client-fingerprint': 'chrome',
+  //     udp: true
+  //   });
+  // }
+
   const nodeNames = (config.proxies || []).map(p => p.name).filter(Boolean);
   const providers = Object.keys(config['proxy-providers'] || {});
   const providerUses = providers.length ? { use: providers } : {};
